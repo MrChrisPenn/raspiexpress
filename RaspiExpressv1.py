@@ -123,13 +123,19 @@ app = App()
 
 instructions = Text(app, text="Choose a forward speed")
 combo = Combo(app, options=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1], command=you_chose_forward)
+combo.width = 60
+combo.height = 5
 result = Text(app)
 
 instructions = Text(app, text="Choose a backward speed")
 combo = Combo(app, options=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1], command=you_chose_backward)
+combo.width = 60
+combo.height = 5
 result = Text(app)
 
 Stop_button = PushButton(app, command=Stop, text="Stop")
+Stop_button.width = 100
+Stop_button.height = 60
 app.display()
 
 
