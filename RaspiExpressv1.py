@@ -9,7 +9,7 @@ from guizero import App, PushButton
 Speed = 0
 
 from guizero import App, Text, Combo
-
+from time import sleep
 
 def you_chose_forward(selected_value):
     if selected_value == "0.1":
@@ -66,53 +66,63 @@ def you_chose_backward(selected_value):
     if selected_value == "0.1":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "0.2":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "0.3":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "0.4":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
         
     elif selected_value == "0.5":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "0.6":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "0.7":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "0.8":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
         
     elif selected_value == "0.9":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
     elif selected_value == "1":
         Speed = float(selected_value)
         print(Speed)
-        robot.forward(Speed)
+        robot.backward(Speed)
 
+def Turtle():
+    Speed = 0.3
+    print(Speed)
+    robot.forward(Speed)
+    sleep(5)
+    robot.stop()
+    sleep(12)
+    robot.backward(Speed)
+    sleep(5)
+    robot.stop()
 
 robot = CamJamKitRobot()
 
@@ -127,16 +137,27 @@ combo.width = 60
 combo.height = 5
 result = Text(app)
 
+
+
+
 instructions = Text(app, text="Choose a backward speed")
 combo = Combo(app, options=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1], command=you_chose_backward)
 combo.width = 60
 combo.height = 5
 result = Text(app)
 
+Turtle_button = PushButton(app, command=Turtle, text="Turtle")
+Turtle_button.width = 20
+Turtle_button.height = 10
+
+
 Stop_button = PushButton(app, command=Stop, text="Stop")
-Stop_button.width = 100
-Stop_button.height = 60
+Stop_button.width = 20
+Stop_button.height = 10
+
+
 app.display()
+
 
 
 
